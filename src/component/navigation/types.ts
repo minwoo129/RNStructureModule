@@ -20,12 +20,37 @@ export type RootStackPageProps<T extends RootStackPages> = RouteProp<
 // =============================== AuthStackNavigator ===============================
 export interface AuthStackNavigatorProps {}
 
+export type AuthStackPageParams = {
+  Login: undefined;
+  Join: undefined;
+};
+
+export type AuthStackNavigation = StackNavigationProp<AuthStackPageParams>;
+
+export type AuthStackPages = keyof AuthStackPageParams;
+
+export type AuthStackPageProps<T extends AuthStackPages> = RouteProp<
+  AuthStackPageParams,
+  T
+>;
+
 // =============================== MainStackNavigator ===============================
 export interface MainStackNavigatorProps {}
 
 export type MainStackPageParams = {
   MainTabNavigator: undefined;
+  MainStackPage1: undefined;
+  MainStackPage2: undefined;
 };
+
+export type MainStackNavigation = StackNavigationProp<MainStackPageParams>;
+
+export type MainStackPages = keyof MainStackPageParams;
+
+export type MainStackPageProps<T extends MainStackPages> = RouteProp<
+  MainStackPageParams,
+  T
+>;
 
 // =============================== MainTabNavigator ===============================
 export interface MainTabNavigatorProps {}
